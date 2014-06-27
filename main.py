@@ -14,6 +14,7 @@ class main:
     def __init__(self):
        print('[-] Mullvad Trial Abuser, by obnoxious')
        global args
+       self.args = args
        self.session = requests.session()
        while True:
             try:
@@ -41,7 +42,7 @@ class main:
 
 
     def replaceAccountNumber(self):
-        self.directory = 'C:/Program Files (x86)/Mullvad/settings.ini'
+        self.directory = self.args.directory
         if os.path.exists(self.directory):
             print("[+] Found mullvad's settings.ini")
         else:
